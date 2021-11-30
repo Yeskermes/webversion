@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+<link rel = "icon" href = "https://th.bing.com/th/id/OIP.zSZ4Dkjjj7NHQ_FzksrwfgHaHa?w=167&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" type = "image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <img  id="logo" src="https://th.bing.com/th/id/OIP.zSZ4Dkjjj7NHQ_FzksrwfgHaHa?w=167&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"/>
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" id="form" class="sign-in-form form">
+            <h2 class="title">Sign up</h2>
+            <form id="form" class="form">
+    <div class="form-control">
+      <input type="text" placeholder="Enter username" id="username" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <input type="email" placeholder="Enter email" id="email" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <input type="number" placeholder="Contact number" id="number" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <input type="password" placeholder="Password" id="password"/>
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <input type="password" placeholder="Confirm Password" id="password2"/>
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+    <button onclick="saveData()">Submit</button>
+            <p class="social-text">or continue with</p>
+            <ul class="social-links">
+        <li>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-apple" ></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-google"></i>
+          </a>
+        </li>
+      </ul>
+        </div>
+      </div>
+</form>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Sign up to</h3>
+            <h4>Lorem ipsum is simply</h4>
+            <p>If you don't have an account register<br>You can <a href="index.html">Login here !</a></p>
+          </div>
+        </div>
+      </div>
+      <img id="sally" src="img/Saly.png">
+    </div>
+
+    <script src="app1.js"></script>
+  </body>
+ <script>
+function saveData()
+{
+let email,username,number,password;
+email=document.getElementById("email").value;
+username=document.getElementById("username").value;
+number=document.getElementById("number").value;
+password=document.getElementById("password").value;
+
+let user_records=new Array();
+user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+if(user_records.some((v)=>{return v.email==email}))
+{
+  alert("Successfully registered");
+}
+else
+{
+  user_records.push({
+  "email":email,
+  "username":username,
+  "number":number,
+  "password":password
+})
+localStorage.setItem("users",JSON.stringify(user_records));
+}
+
+}
+          </script>
+
+</html>
